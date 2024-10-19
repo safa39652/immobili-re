@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ajouter une Annonce</title>
+</head>
+<body>
+    <h1>Ajouter une Annonce</h1>
+    <form action="#" th:action="@{/admin/annonces/ajouter}" th:object="${annonce}" method="post">
+        <label>Titre:</label>
+        <input type="text" th:field="*{titre}" required /><br/>
+        <label>Description:</label>
+        <textarea th:field="*{description}" required></textarea><br/>
+        <label>Localisation:</label>
+        <input type="text" th:field="*{localisation}" required /><br/>
+        <label>Prix:</label>
+        <input type="number" th:field="*{prix}" required /><br/>

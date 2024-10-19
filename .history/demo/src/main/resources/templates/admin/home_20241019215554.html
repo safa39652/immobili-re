@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur le site d'annonces</h1>
+        <h2>Annonces disponibles</h2>
+        <div class="row" th:each="annonce : ${annonces}">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${annonce.titre}"></h5>
+                        <p class="card-text" th:text="${annonce.description}"></p>
+                        <p class="card-text"><strong>Prix:</strong> <span th:text="${annonce.prix}"></span></p>
+                        <a th:href="@{/annonces/{id}(id=${annonce.id})}" class="btn btn-primary">Voir Détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

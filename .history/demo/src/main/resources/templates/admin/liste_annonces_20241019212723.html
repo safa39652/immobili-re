@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des Annonces</title>
+</head>
+<body>
+    <h1>Liste des Annonces</h1>
+    <a href="/admin/annonces/ajouter">Ajouter une annonce</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="annonce : ${annonces}">
+                <td th:text="${annonce.titre}"></td>
+                <td th:text="${annonce.description}"></td>
+                <td th:text="${annonce.prix}"></td>
+                <td>
+                    <!-- Liens pour modifier et supprimer -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
